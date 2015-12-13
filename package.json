@@ -1,0 +1,19 @@
+{
+  "name": "eldomino",
+  "version": "1.0.0",
+  "description": "Link Players to play domino game without the need to be online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olafguesswhapp/elDomino.git"
+  },
+  "author": "Olaf Peters",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olafguesswhapp/elDomino/issues"
+  },
+  "homepage": "https://github.com/olafguesswhapp/elDomino#readme"
+}
