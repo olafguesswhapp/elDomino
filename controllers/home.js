@@ -1,3 +1,7 @@
+var JSX = require('node-jsx').install();
+var React = require('react');
+ReactApp = React.createFactory(require('../components/ReactApp'));
+
 module.exports = {
   registerRoutes: function(app) {
     app.get('/', this.home);
@@ -5,7 +9,8 @@ module.exports = {
   },
 
   home: function(req, res) {
-    res.render('home', { title: 'Express', texto: 'olaf' });
+    var reactHtml = React.renderToString(ReactApp({}));
+    res.render('home', {reactOutput: reactHtml});
   },
 
   test: function (req, res, next) {
