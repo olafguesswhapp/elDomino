@@ -1,5 +1,6 @@
 var JSX = require('node-jsx').install();
 var React = require('react');
+var ReactDOMServer = require('react-dom/server');
 ReactApp = React.createFactory(require('../components/ReactApp'));
 
 module.exports = {
@@ -9,7 +10,9 @@ module.exports = {
   },
 
   home: function(req, res) {
-    var reactHtml = React.renderToString(ReactApp({}));
+    var reactHtml = ReactDOMServer.renderToString(ReactApp({}));
+    console.log('check reactHtml');
+    console.log(reactHtml);
     res.render('home', {reactOutput: reactHtml});
   },
 
