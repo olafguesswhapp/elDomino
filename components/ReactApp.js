@@ -1,18 +1,25 @@
-/** @jsx React.DOM */
-
-var React = require('react');
-
 var ReactApp = React.createClass({
+	
+  getInitialState: function() {
+	  return {
+	    counter: 0,
+	  };
+	},
 
-      render: function () {
-        return (
-          <div id="table-area">
-            <h1>Testing React</h1>
+	handleClick: function(event) {
+    this.setState({ counter: this.state.counter + 1 });
+    console.log('btn event was ' + event.type + ' - current counter is ' + this.state.counter);
+  },
 
-          </div>
-        )
-      }
-  });
+  render: function () {
+    return (
+      <div>
+        <h1>Testing React</h1>
+        <button onClick={this.handleClick}>click to increase</button>
+        <p>Punkte: {this.state.counter}</p>
+      </div>
+    )
+  }
+});
 
-/* Module.exports instead of normal dom mounting */
-module.exports = ReactApp;
+ReactDOM.render(<ReactApp />,document.getElementById("app"));

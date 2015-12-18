@@ -1,7 +1,7 @@
-var JSX = require('node-jsx').install();
-var React = require('react');
-var ReactDOMServer = require('react-dom/server');
-ReactApp = React.createFactory(require('../components/ReactApp'));
+// var JSX = require('node-jsx').install();
+// var React = require('react');
+// var ReactDOMServer = require('react-dom/server');
+// var ReactApp = React.createFactory(require('../components/ReactApp'));
 
 module.exports = {
   registerRoutes: function(app) {
@@ -10,10 +10,10 @@ module.exports = {
   },
 
   home: function(req, res) {
-    var reactHtml = ReactDOMServer.renderToString(ReactApp({}));
-    console.log('check reactHtml');
-    console.log(reactHtml);
-    res.render('home', {reactOutput: reactHtml});
+    // var reactHtml = ReactDOMServer.renderToString(ReactApp({}));
+    // console.log('check reactHtml');
+    // console.log(reactHtml);
+    res.render('home');
   },
 
   test: function (req, res, next) {
