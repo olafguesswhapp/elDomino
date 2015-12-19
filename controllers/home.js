@@ -1,8 +1,3 @@
-// var JSX = require('node-jsx').install();
-// var React = require('react');
-// var ReactDOMServer = require('react-dom/server');
-// var ReactApp = React.createFactory(require('../components/ReactApp'));
-
 module.exports = {
   registerRoutes: function(app) {
     app.get('/', this.home);
@@ -10,10 +5,8 @@ module.exports = {
   },
 
   home: function(req, res) {
-    // var reactHtml = ReactDOMServer.renderToString(ReactApp({}));
-    // console.log('check reactHtml');
-    // console.log(reactHtml);
-    res.render('home');
+    var context = {buildSrc: './build/ReactApp.js'};
+    res.render('home', context);
   },
 
   test: function (req, res, next) {
