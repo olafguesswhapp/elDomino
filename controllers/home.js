@@ -10,7 +10,14 @@ module.exports = {
   },
 
   test: function (req, res, next) {
-    res.render('home', { title: 'Testeando', texto: 'olaf2' });
+    var context = {
+      buildSrc: './build/test.js',
+      title: 'Testeando',
+      texto: 'olaf2'
+    };
+    console.log('context:');
+    console.log(context);
+    res.render('home', context);
   },
 
 };

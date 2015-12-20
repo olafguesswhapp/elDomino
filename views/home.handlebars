@@ -1,2 +1,6 @@
 <div id='app'></div>
-<script src={{buildSrc}}></script>
+	{{#if buildSrc}}
+	<script src={{buildSrc}}></script>
+	{{else}}
+	<div>{{title}} {{texto}}</div>
+	{{/if}}
